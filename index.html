@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Heart Picks 9月KOC付款請示</title>
+<style>
+    /* 版面：單欄簽呈卡片，上方摘要兩欄，其下依序為重點摘要與五個章節 */
+    :root {
+        --primary-color: #002288;
+        --accent-color: #d32f2f;
+        --orange-color: #ea580c;
+        --border-color: #e2e8f0;
+        --rule-color: #edf2f7;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --soft-bg: #f0f4f8;
+        --row-bg: #f8fafc;
+        --text-main: #333333;
+        --text-secondary: #4a5568;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --primary-color: #9db3ff;
+            --accent-color: #ff8078;
+            --orange-color: #fb923c;
+            --border-color: #2c3549;
+            --rule-color: #252d3f;
+            --bg-color: #0f1420;
+            --card-bg: #171d2b;
+            --soft-bg: #1f2738;
+            --row-bg: #1c2333;
+            --text-main: #e5e9f0;
+            --text-secondary: #a3adbf;
+            --shadow: none;
+            color-scheme: dark;
+        }
+    }
+
+    :root[data-theme="dark"] {
+        --primary-color: #9db3ff;
+        --accent-color: #ff8078;
+        --orange-color: #fb923c;
+        --border-color: #2c3549;
+        --rule-color: #252d3f;
+        --bg-color: #0f1420;
+        --card-bg: #171d2b;
+        --soft-bg: #1f2738;
+        --row-bg: #1c2333;
+        --text-main: #e5e9f0;
+        --text-secondary: #a3adbf;
+        --shadow: none;
+        color-scheme: dark;
+    }
+
+    body {
+        font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+        margin: 0;
+        padding-block: 40px;
+        padding-inline: 16px;
+        font-size: 14pt;
+    }
+
+    .proposal-card {
+        background-color: var(--card-bg);
+        max-width: 960px;
+        margin-inline: auto;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+    }
+
+    .card-top-accent {
+        height: 8px;
+        background: var(--primary-color);
+    }
+
+    .card-body {
+        padding: 40px;
+    }
+
+    .summary-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 20px;
+        padding-bottom: 25px;
+        border-bottom: 2px solid var(--rule-color);
+    }
+
+    .summary-item {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .summary-label {
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .summary-value {
+        font-size: 16pt;
+        font-weight: 800;
+        color: var(--primary-color);
+        line-height: 1.2;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .summary-value.total {
+        color: var(--accent-color);
+    }
+
+    .summary-subtext {
+        color: var(--text-secondary);
+        margin-top: 6px;
+    }
+
+    .key-points-container {
+        background-color: var(--soft-bg);
+        border-left: 5px solid var(--primary-color);
+        padding: 18px 25px;
+        margin-bottom: 30px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .key-points-title {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 12px;
+        font-size: 15pt;
+    }
+
+    .highlight-orange {
+        color: var(--orange-color);
+        font-weight: 700;
+    }
+
+    .section {
+        margin-bottom: 30px;
+    }
+
+    .section:last-child {
+        margin-bottom: 0;
+    }
+
+    .section-title {
+        font-size: 15pt;
+        color: var(--primary-color);
+        margin: 0 0 12px 0;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--rule-color);
+        padding-bottom: 8px;
+    }
+
+    .section-title::before {
+        content: '';
+        display: block;
+        flex: none;
+        width: 6px;
+        height: 18px;
+        background-color: var(--primary-color);
+        margin-right: 12px;
+        border-radius: 2px;
+    }
+
+    .content-block {
+        padding-left: 18px;
+        margin-bottom: 15px;
+    }
+
+    .table-container {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .budget-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14pt;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .budget-table th {
+        background-color: var(--row-bg);
+        color: var(--primary-color);
+        font-weight: 700;
+        text-align: center;
+        padding: 12px 8px;
+        border-bottom: 2px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        white-space: nowrap;
+    }
+
+    .budget-table td {
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .budget-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .budget-table th:last-child, .budget-table td:last-child {
+        border-right: none;
+    }
+
+    .budget-table .text-left {
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    .budget-table .row-emphasis td {
+        background-color: var(--row-bg);
+    }
+
+    .budget-table .row-total td {
+        background-color: var(--row-bg);
+        font-weight: bold;
+    }
+
+    .brand-highlight {
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .nested-list {
+        margin: 8px 0;
+        padding-left: 20px;
+        list-style-type: none;
+    }
+
+    .key-points-container .nested-list {
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    .nested-list li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .nested-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+        body { padding-block: 16px; font-size: 12pt; }
+        .card-body { padding: 20px; }
+        .summary-row { grid-template-columns: 1fr; gap: 20px; }
+        .key-points-container { padding: 14px 16px; }
+        .content-block { padding-left: 0; }
+        .nested-list { padding-left: 0; }
+        .budget-table { font-size: 12pt; }
+    }
+</style>
+
+<div class="proposal-card">
+    <div class="card-top-accent"></div>
+    <div class="card-body">
+
+        <div class="summary-row">
+            <div class="summary-item">
+                <span class="summary-label">請款項目說明</span>
+                <div class="summary-value">KOC 合作發布及廣告投放結束</div>
+                <div class="summary-subtext">申請 2026 年 9 月檔期付款</div>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">專案總費用</span>
+                <div class="summary-value total">NT$ 21,234</div>
+                <div class="summary-subtext">(KOC 合作費 $13,000 + 廣告投放費 $8,234；原簽呈費用 3 位共 $60,000)</div>
+            </div>
+        </div>
+
+        <div class="key-points-container">
+            <div class="key-points-title">💡 重點摘要</div>
+            <ul class="nested-list">
+                <li><span class="highlight-orange">廣告成效表現</span>：曝光 206,320 次、點擊 509 次，點擊率 0.25%。</li>
+                <li><span class="highlight-orange">曝光達成率 83.67%</span>：目標曝光 246,600 次未達標，主因為鎖定區域限縮於大台北，且適逢節慶與週年慶前競價上升，曝光成本持續走高。</li>
+                <li><span class="highlight-orange">後續優化建議</span>：持續鎖定「禮物/禮品店」受眾。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">一、費用與走期明細</h3>
+            <div class="table-container">
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>發佈日期 / 廣告走期</th>
+                            <th>費用 (TWD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left"><b>KOC - 鈴鈴的餐桌</b></td>
+                            <td>9/16</td>
+                            <td>$13,000</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">鈴鈴的餐桌-廣告投放</td>
+                            <td>9/17~9/24</td>
+                            <td>$8,234</td>
+                        </tr>
+                        <tr class="row-total">
+                            <td class="text-left">總計</td>
+                            <td></td>
+                            <td class="brand-highlight">$21,234</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">二、廣告投放成效</h3>
+            <div class="table-container">
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>執行媒體</th>
+                            <th>執行走期</th>
+                            <th>目標曝光</th>
+                            <th>曝光量</th>
+                            <th>廣告點擊數</th>
+                            <th>點擊率</th>
+                            <th>達成率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">Meta (鈴鈴的餐桌)</td>
+                            <td>9/17~9/24</td>
+                            <td>246,600</td>
+                            <td>206,320</td>
+                            <td>509</td>
+                            <td class="brand-highlight">0.25%</td>
+                            <td class="brand-highlight">83.67%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="content-block">
+                <ul class="nested-list">
+                    <li><span class="highlight-orange">每日表現：</span>每日點擊率介於 0.21%~0.30%。</li>
+                    <li><span class="highlight-orange">裝置分布：</span>曝光與點擊皆 100% 來自手機 App。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">三、受眾分析</h3>
+            <div class="table-container">
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>興趣鎖定</th>
+                            <th>曝光量</th>
+                            <th>點擊數</th>
+                            <th>點擊率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-emphasis">
+                            <td class="text-left brand-highlight">禮物/禮品店</td>
+                            <td class="brand-highlight">103,884</td>
+                            <td class="brand-highlight">277</td>
+                            <td class="brand-highlight">0.27%</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">百貨公司</td>
+                            <td>64,098</td>
+                            <td>151</td>
+                            <td>0.24%</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">咖啡廳/生活品質</td>
+                            <td>37,417</td>
+                            <td>81</td>
+                            <td>0.22%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">四、執行說明</h3>
+            <div class="content-block">
+                <ul class="nested-list">
+                    <li><span class="highlight-orange">鎖定區域限縮：</span>本波因鎖定區域較為限縮（大台北地區），觀察廣告上線前五日曝光成本持續提升，廣告商其他執行案件亦有相同狀況，推測為節慶以及即將進入週年慶檔期，競價皆有提升的趨勢。</li>
+                    <li><span class="highlight-orange">9/21 調整：</span>鎖定區域放寬至基隆、桃園，並加開一組「不鎖年齡與興趣」的廣告群組，當日曝光成本稍有下降，但因此群組曝光量在各群組間佔比較小，整體曝光成本下降幅度不大。</li>
+                    <li><span class="highlight-orange">與母親節檔期比較：</span>本波點擊率 0.25%，高於上一波母親節檔期表現最佳的 Elaine (0.17%)。素材開頭即以「長輩禮物要怎麼送？」點出送禮痛點，推測為點擊率提升原因之一。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">五、後續優化建議</h3>
+            <div class="content-block">
+                <ul class="nested-list">
+                    <li><span class="brand-highlight">檔期避讓：</span>節慶與週年慶前競價偏高，建議後續排程提前上線，或於該時段預留較高的曝光成本預算。</li>
+                    <li><span class="brand-highlight">Hook設定：</span>本波素材開頭直接點出痛點，點擊率優於前檔，建議後續 KOC 合作 brief 持續沿用此要求，並加入明確 CTA。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
